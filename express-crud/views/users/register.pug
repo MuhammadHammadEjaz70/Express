@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 Sing Up
+  form(action="/register" method="post")
+        .form-group 
+            label(for="name") Name 
+            input#name(type="text",class="form-control" name="name")
+        .form-group 
+            label(for="email") Email 
+            input#price(type="email",class="form-control" name="email")
+         
+        .form-group 
+            label(for="password") password 
+            input#price(type="password",class="form-control" name="password")
+        input(type="submit" , class="btn btn-info" style="margin-top: 20px" value="Register")
+  
+ 
+

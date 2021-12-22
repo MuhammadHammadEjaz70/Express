@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 Login
+  form(action="/login" method="post")
+        
+        .form-group 
+            label(for="email") Email 
+            input#price(type="email",class="form-control" name="email" value="hammad@hammad.com")
+         
+        .form-group 
+            label(for="password") password 
+            input#price(type="password",value="hammad",class="form-control" name="password")
+        input(type="submit" , class="btn btn-info" style="margin-top: 20px" value="Login")
+  
+ 
+
