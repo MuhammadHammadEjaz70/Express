@@ -8,8 +8,11 @@ router.get("/", async function (req, res, next) {
   console.log(req.session);
   res.render("products/list", { title: "Products In DB", products: products });
 });
-router.get("/add", checkSessionAuth, async function (req, res, next) {
-  let products = await Product.find();
+
+
+
+router.get("/add", async function (req, res, next) {
+   
   // console.log(products);
   res.render("products/add");
 });
@@ -47,6 +50,9 @@ router.get("/cart/remove/:id", async function (req, res, next) {
   res.cookie("cart", cart);
   res.redirect("/cart");
 });
+
+
+
 router.get("/edit/:id", async function (req, res, next) {
   let product = await Product.findById(req.params.id);
   res.render("products/edit", { product });
