@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   //   console.log(req.query);
   console.log(req.user);
   let page = Number(req.query.page ? req.query.page : 1);
-  let perPage = Number(req.query.perPage ? req.query.perPage : 10);
+  let perPage = Number(req.query.perPage ? req.query.perPage : 15);
   let skipRecords = perPage * (page - 1);
   let products = await Product.find().skip(skipRecords).limit(perPage);
   return res.send(products);
